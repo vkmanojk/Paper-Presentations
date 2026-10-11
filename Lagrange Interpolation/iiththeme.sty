@@ -1,34 +1,90 @@
-
 \ProvidesPackage{iiththeme}
 
+% -------------------------------------------------
 % Required packages
+% -------------------------------------------------
 \RequirePackage{graphicx}
 
+% -------------------------------------------------
 % Theme settings
+% -------------------------------------------------
 \usetheme{Madrid}
 \useoutertheme{miniframes}
 \useinnertheme{circles}
 
+% -------------------------------------------------
 % IITH color palette
+% -------------------------------------------------
 \definecolor{IITHorange}{RGB}{243,130,33}
 \definecolor{IITHyellow}{RGB}{254,203,10}
 
+% -------------------------------------------------
 % Beamer color configuration
-\setbeamercolor{palette primary}{bg=IITHorange,fg=white}
-\setbeamercolor{palette secondary}{bg=IITHorange,fg=white}
-\setbeamercolor{palette tertiary}{bg=IITHorange,fg=white}
-\setbeamercolor{palette quaternary}{bg=IITHorange,fg=white}
+% -------------------------------------------------
+\setbeamercolor{palette primary}{
+	bg=IITHorange,
+	fg=white
+}
+\setbeamercolor{palette secondary}{
+	bg=IITHorange,
+	fg=white
+}
+\setbeamercolor{palette tertiary}{
+	bg=IITHorange,
+	fg=white
+}
+\setbeamercolor{palette quaternary}{
+	bg=IITHorange,
+	fg=white
+}
 
-\setbeamercolor{structure}{fg=IITHorange}
-\setbeamercolor{section in toc}{fg=IITHorange}
-\setbeamercolor{subsection in head/foot}{bg=IITHyellow,fg=white}
+\setbeamercolor{structure}{
+	fg=IITHorange
+}
+\setbeamercolor{section in toc}{
+	fg=IITHorange
+}
+
+\setbeamercolor{section in head/foot}{
+	bg=IITHorange,
+	fg=white
+}
+
+\setbeamercolor{subsection in head/foot}{
+	bg=IITHyellow,
+	fg=white
+}
+
+% -------------------------------------------------
+% Navigation circles
+% -------------------------------------------------
+% Restore the default miniframe circles.
+% Do not empty these templates.
+\setbeamercolor{section in head/foot}{
+	bg=IITHorange,
+	fg=white
+}
+
+\setbeamercolor{subsection in head/foot}{
+	bg=IITHyellow,
+	fg=white
+}
+
+% Preserve the default miniframes headline and circles
+\useoutertheme{miniframes}
+\setbeamertemplate{mini frame}[default]
+
+\makeatletter
 
 
 
-% Title page customization
-% Order: Title -> Logo -> Author -> Institute -> Date
+\makeatother
 
-% Custom title page with orange title band and logo
+% -------------------------------------------------
+% Custom title page
+% Order: Title -> Logo -> Author -> Institute
+% -------------------------------------------------
+
 \setbeamertemplate{title page}{
 	\begin{centering}
 		
@@ -49,8 +105,11 @@
 		
 		\vspace{0.5cm}
 		
-		% Logo between title and author
-		\includegraphics[height=2.5cm,keepaspectratio]{images/Logo.png}
+		% Institute logo
+		\includegraphics[
+		height=2.5cm,
+		keepaspectratio
+		]{images/Logo.png}
 		
 		\vspace{0.3cm}
 		
@@ -62,13 +121,7 @@
 		% Institute
 		{\usebeamerfont{institute}\insertinstitute\par}
 		
-	%	\vspace{0.2cm}
-		
-		% Date
-	%	{\usebeamerfont{date}\insertdate\par}
-		
 		\vfill
 		
 	\end{centering}
 }
-
