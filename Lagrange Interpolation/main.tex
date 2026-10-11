@@ -1,0 +1,101 @@
+
+\documentclass[xcolor=dvipsnames]{beamer}
+
+% Load the custom theme
+\usepackage{iiththeme}
+
+% Presentation information
+\title[Paper Presentation]{LLM-Text Watermarking based on Lagrange Interpolation}
+
+\author[Manoj Kumar]{
+	\vspace{-0.2cm}
+	\textbf{Manoj Kumar V K} \\
+	\vspace{0.2cm}
+	{\small Under the Guidance of \\ 
+	\textbf{Dr. Shibam Ghosh}}
+}
+
+\institute[IIT Hyderabad]{
+	Department of Computer Science\\
+	Indian Insitute of Technogology Hyderabad
+}
+
+\date{\today}
+
+\begin{document}
+	
+	% Title slide: title, logo, author, institute, date
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Table of contents
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+	
+	% Section 1
+	\section{Introduction}
+	
+	\begin{frame}{Introduction}
+		\begin{itemize}
+			\item LLM-generated text can be modified, paraphrased, or partially deleted.
+			\item Such changes can make watermark detection and authorship attribution difficult.
+			\item \textbf{Problem:} Recover the embedded author identity from the surviving watermark, despite text modifications.
+		\end{itemize}
+	\end{frame}
+	
+%	\section{Research Gaps}
+	\begin{frame}{Research Gaps}
+		\begin{itemize}
+			\item Existing watermarking methods focus largely on detection rather than recovering a specific author identity.
+			\item Text modifications can disrupt watermark recovery.
+			\item Distinguishing genuine watermark points from inserted or corrupted points remains challenging.
+			\item Robust identity recovery must balance resilience against tampering with resistance to forgery.
+		\end{itemize}
+	\end{frame}
+	
+	
+	\begin{frame}{Contributions}
+		\begin{itemize}
+			\item Lagrange interpolation-based watermarking scheme for author identity recovery.
+			\item Maximum Collinear Points (MCP) detection to identify genuine watermark points despite corruption.
+			\item Extensions to multiple secrets and higher-degree polynomials.
+			\item Experimental analysis of proposed techniques
+		\end{itemize}
+	\end{frame}
+	
+	\section{Methodology}
+	\begin{frame}{Proposed Watermarking Scheme}
+		\begin{itemize}
+			\item Encode the secret identity as a polynomial over \(GF(2^n)\).
+			\item Embed points \((x_i,f(x_i))\) into LLM-generated text.
+			\item Recover watermark points from potentially modified text.
+			\item Identify the dominant line using Maximum Collinear Points (MCP).
+			\item Reconstruct the secret identity from the recovered line.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Watermark Representation}
+		\begin{itemize}
+			\item Work over the finite field \(GF(2^n)\).
+			\item Encode the secret identity as
+			\[
+			f(x)=a_0+a_1x,\qquad
+			K=(a_0\parallel a_1).
+			\]
+			\item Generate pseudorandom coordinates using an LFSR:
+			\[
+			x_i=\operatorname{LFSR}(t_i,sk).
+			\]
+			\item Compute watermark points:
+			\[
+			P_i=(x_i,y_i),\qquad y_i=f(x_i).
+			\]
+			\item Each point encodes \(2n\) bits; hence \(T=2nN\).
+		\end{itemize}
+	\end{frame}
+	
+	
+	
+\end{document}

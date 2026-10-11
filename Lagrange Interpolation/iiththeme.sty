@@ -1,0 +1,74 @@
+
+\ProvidesPackage{iiththeme}
+
+% Required packages
+\RequirePackage{graphicx}
+
+% Theme settings
+\usetheme{Madrid}
+\useoutertheme{miniframes}
+\useinnertheme{circles}
+
+% IITH color palette
+\definecolor{IITHorange}{RGB}{243,130,33}
+\definecolor{IITHyellow}{RGB}{254,203,10}
+
+% Beamer color configuration
+\setbeamercolor{palette primary}{bg=IITHorange,fg=white}
+\setbeamercolor{palette secondary}{bg=IITHorange,fg=white}
+\setbeamercolor{palette tertiary}{bg=IITHorange,fg=white}
+\setbeamercolor{palette quaternary}{bg=IITHorange,fg=white}
+
+\setbeamercolor{structure}{fg=IITHorange}
+\setbeamercolor{section in toc}{fg=IITHorange}
+\setbeamercolor{subsection in head/foot}{bg=IITHyellow,fg=white}
+
+
+
+% Title page customization
+% Order: Title -> Logo -> Author -> Institute -> Date
+
+% Custom title page with orange title band and logo
+\setbeamertemplate{title page}{
+	\begin{centering}
+		
+		\vbox{}
+		
+		\vfill
+		
+		% Orange title band with shadow
+		\begin{beamercolorbox}[
+			wd=0.935\paperwidth,
+			sep=5pt,
+			center,
+			rounded=true,
+			shadow=true
+			]{title}
+			\usebeamerfont{title}\inserttitle\par
+		\end{beamercolorbox}
+		
+		\vspace{0.5cm}
+		
+		% Logo between title and author
+		\includegraphics[height=2.5cm,keepaspectratio]{images/Logo.png}
+		
+		\vspace{0.3cm}
+		
+		% Author
+		{\usebeamerfont{author}\insertauthor\par}
+		
+		\vspace{0.1cm}
+		
+		% Institute
+		{\usebeamerfont{institute}\insertinstitute\par}
+		
+	%	\vspace{0.2cm}
+		
+		% Date
+	%	{\usebeamerfont{date}\insertdate\par}
+		
+		\vfill
+		
+	\end{centering}
+}
+
