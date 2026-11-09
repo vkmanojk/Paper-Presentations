@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.21)  12 OCT 2026 09:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.21)  12 OCT 2026 13:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -935,7 +935,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 heorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (main.nav)
-<images/Logo.png, id=112, 644.8893pt x 598.3956pt>
+<images/Logo.png, id=108, 644.8893pt x 598.3956pt>
 File: images/Logo.png Graphic file (type png)
 <use images/Logo.png>
 Package pdftex.def Info: images/Logo.png  used on input line 35.
@@ -945,13 +945,13 @@ Package pdftex.def Info: images/Logo.png  used on input line 35.
  <./images/Logo.png>] (main.toc) [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
 
 
 (C:\Users\vkman\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
 
 
 (C:\Users\vkman\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -963,29 +963,30 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [5
 
-] [6
-
-] [7
-
-] [8
-
 ]
-<images/algorithm1.png, id=795, 575.65062pt x 411.5375pt>
+<images/algorithm1.png, id=527, 569.62813pt x 402.00188pt>
 File: images/algorithm1.png Graphic file (type png)
 <use images/algorithm1.png>
-Package pdftex.def Info: images/algorithm1.png  used on input line 179.
-(pdftex.def)             Requested size: 292.11105pt x 208.83266pt.
- [9
+Package pdftex.def Info: images/algorithm1.png  used on input line 126.
+(pdftex.def)             Requested size: 295.91281pt x 208.83362pt.
+ [6
 
  <./images/algorithm1.png>]
-<images/algorithm2.png, id=877, 572.1375pt x 397.98688pt>
+<images/algorithm2.png, id=605, 727.71875pt x 411.03563pt>
 File: images/algorithm2.png Graphic file (type png)
 <use images/algorithm2.png>
-Package pdftex.def Info: images/algorithm2.png  used on input line 189.
-(pdftex.def)             Requested size: 300.21954pt x 208.83693pt.
- [10
+Package pdftex.def Info: images/algorithm2.png  used on input line 136.
+(pdftex.def)             Requested size: 369.73253pt x 208.83513pt.
+ [7
 
- <./images/algorithm2.png>] [11
+ <./images/algorithm2.png>]
+[8
+
+] [9
+
+] [10
+
+] [11
 
 ] [12
 
@@ -999,18 +1000,13 @@ Package pdftex.def Info: images/algorithm2.png  used on input line 189.
 
 ] [17
 
-] [18
-
-] [19
-
-] (main.bbl) [20
+] (main.bbl) [18
 
  <C:/Users/vkman/AppData/Local/Programs/MiKTeX/tex/latex/beamer/beamericonartic
 le.pdf>]
 LaTeX Font Info:    Font shape `T1/calligra/m/n' will be
-(Font)              scaled to size 35.82726pt on input line 430.
-
-[21
+(Font)              scaled to size 35.82726pt on input line 347.
+ [19
 
 ]
 \tf@nav=\write6
@@ -1022,7 +1018,8 @@ LaTeX Font Info:    Font shape `T1/calligra/m/n' will be
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
- (main.aux)
+
+(main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-08-10>
@@ -1031,32 +1028,32 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: EBE6816997729F38EC54D660BB22E789;845.
  ) 
 Here is how much of TeX's memory you used:
- 22482 strings out of 467441
- 444600 string characters out of 5407591
- 840620 words of memory out of 5000000
- 51269 multiletter control sequences out of 15000+600000
- 636610 words of font info for 74 fonts, out of 8000000 for 9000
+ 22472 strings out of 467441
+ 444399 string characters out of 5407591
+ 838507 words of memory out of 5000000
+ 51262 multiletter control sequences out of 15000+600000
+ 636956 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,123p,382b,788s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\vkman\AppData\Local\MiKTeX\fonts/pk/ljfour/public/calligra/dpi1433
 \callig15.pk><C:/Users/vkman/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmbx10.pfb><C:/Users/vkman/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmbx8.pfb><C:/Users/vkman/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/vkman/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/vkman/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/vkman/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/vkman/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/User
-s/vkman/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><
-C:/Users/vkman/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-7.pfb><C:/Users/vkman/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmr8.pfb><C:/Users/vkman/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Users/vkman/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb><C:/Users/vkman/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (21 pages, 851915 bytes).
+ts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/vkman/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/vkman/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/vkman/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/vkman
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Use
+rs/vkman/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb>
+<C:/Users/vkman/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r7.pfb><C:/Users/vkman/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmr8.pfb><C:/Users/vkman/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb><C:/Users/vkman/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy8.pfb><C:/Users/vkman/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (19 pages, 832622 bytes).
 PDF statistics:
- 1905 PDF objects out of 2073 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
+ 1664 PDF objects out of 1728 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
  158 words of extra memory for PDF output out of 10000 (max. 10000000)
 

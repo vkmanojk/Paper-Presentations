@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Watermark Construction}{6}{0}{2}
+\beamer@sectionintoc {3}{Loss-Based Memorization Test}{10}{0}{3}
+\beamer@sectionintoc {4}{Pretraining Experiments}{13}{0}{4}
+\beamer@sectionintoc {5}{Robustness to Data Filtering}{19}{0}{5}
+\beamer@sectionintoc {6}{Robustness to Post-training}{22}{0}{6}
+\beamer@sectionintoc {7}{Conclusion}{25}{0}{7}
+\beamer@sectionintoc {8}{References}{26}{0}{8}

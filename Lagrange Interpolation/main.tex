@@ -39,135 +39,82 @@
 		\tableofcontents
 	\end{frame}
 	
-	% Section 1
 	\section{Introduction}
-	
 	\begin{frame}{Introduction}
 		\begin{itemize}
-			\item LLM-generated text can be modified, paraphrased,
-			truncated, or partially deleted.
-			
-			\item Such modifications can disrupt watermark detection
-			and authorship attribution.
-			
-			\item Watermarking embeds identifiable information into
-			generated text without requiring a visible signature.
-			
-			\item \textbf{Problem:} Recover the embedded author identity
-			even when only part of the original text survives.
+			\item LLM-generated text can be modified, paraphrased, truncated, or partially deleted.
+			\item Such modifications can disrupt watermark detection and authorship attribution.
+			\item Watermarking embeds identifiable information into generated text without requiring a visible signature.
+			\item \textbf{Problem:} Recover the embedded author identity even when only part of the original text survives.
 		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}{Research Gaps}
 		\begin{itemize}
-			\item Recovering a specific author's identity is more
-			demanding than simply detecting a watermark.
-			
-			\item Text modifications can corrupt or remove embedded
-			watermark information.
-			
-			\item The verifier must distinguish genuine watermark
-			points from corrupted or spurious points.
-			
-			\item Reliable recovery requires a balance between
-			robustness, computational efficiency, and security.
+			\item Recovering a specific author's identity is more demanding than simply detecting a watermark.
+			\item Text modifications can corrupt or remove embedded watermark information.
+			\item The verifier must distinguish genuine watermark points from corrupted or spurious points.
 		\end{itemize}
 	\end{frame}
 	
-	\begin{frame}{Contributions}
-		\begin{itemize}
-			\item A Lagrange interpolation-based scheme that encodes
-			an author's identity in a straight line over a finite field.
-			
-			\item A Maximum Collinear Points (MCP) approach to recover
-			the watermark from potentially corrupted points.
-			
-			\item A security analysis of accidental collinearities
-			and algebraic attacks.
-			
-			\item Extraction variants and extensions to multiple
-			secrets and higher-degree polynomials.
-			
-			\item Experimental evaluation of random point sets over
-			finite fields of different sizes.
-		\end{itemize}
-	\end{frame}
+%	\begin{frame}{Contributions}
+%		\begin{itemize}
+%			\item A Lagrange interpolation-based scheme that encodes an author's identity in a straight line over a finite field.
+%			\item A Maximum Collinear Points (MCP) approach to recover the watermark from potentially corrupted points.
+%			\item Security analysis of accidental collinearities and algebraic attacks.
+%			\item Extraction variants and extensions.
+%		\end{itemize}
+%	\end{frame}
 	
 	\section{Methodology}
-	
 	\begin{frame}{Proposed Watermarking Scheme}
 		\begin{enumerate}
-			\item Encode the secret identity as coefficients of
-			a polynomial over $GF(2^n)$.
-			
-			\item Generate pseudorandom coordinates $x_i$ using
-			a secret-seeded generator.
-			
+			\item Encode the secret identity as coefficients of a polynomial over $GF(2^n)$.
+			\item Generate pseudorandom coordinates $x_i$ using a secret-seeded generator.
 			\item Compute watermark points $(x_i,f(x_i))$.
-			
-			\item Embed the bits of these points into the generated
-			text by biasing token-selection logits.
-			
-			\item Recover candidate points from the text and use
-			MCP to identify the dominant line.
-			
-			\item Reconstruct the secret identity from the line's
-			coefficients.
+			\item Embed the bits of these points into the generated text by biasing token-selection logits.
+			\item Recover candidate points from the text and use Maximum Collinear Points (MCP) to identify the dominant line.
+			\item Reconstruct the secret identity from the line's coefficients.
 		\end{enumerate}
 	\end{frame}
 	
-	\begin{frame}{Watermark Representation}
-		\begin{itemize}
-			\item All polynomial operations are performed over
-			the finite field $GF(2^n)$.
-			
-			\item The secret identity is represented by the
-			coefficients of a linear polynomial:
-			\[
-			f(x)=a_0+a_1x
-			\]
-			\[
-			K=(a_0\parallel a_1)
-			\]
-			
-			\item Generate pseudorandom coordinates using an
-			LFSR with secret seed $sk$:
-			\[
-			x_i=\operatorname{LFSR}(t_i,sk)
-			\]
-			
-			\item Compute the corresponding watermark points:
-			\[
-			P_i=(x_i,y_i),\qquad y_i=f(x_i)
-			\]
-			
-			\item Each point encodes $2n$ bits; $N$ points require
-			\[
-			T=2nN \text{ bits}.
-			\]
-		\end{itemize}
-	\end{frame}
+%	\begin{frame}{Watermark Representation}
+%		\begin{itemize}
+%			\item All polynomial operations are performed over the finite field $GF(2^n)$.	
+%%			\item The secret identity is represented by the 			coefficients of a linear polynomial:
+%			\[
+%			f(x)=a_0+a_1x
+%			\]
+%			\[
+%			K=(a_0\parallel a_1)
+%			\]			
+%			\item Generate pseudorandom coordinates using an LFSR with secret seed $sk$:
+%			\[
+%			x_i=\operatorname{LFSR}(t_i,sk)
+%			\]
+%			\item Compute the corresponding watermark points:
+%			\[
+%			P_i=(x_i,y_i),\qquad y_i=f(x_i)
+%			\]			
+%			\item Each point encodes $2n$ bits; $N$ points require
+%			\[
+%			T=2nN \text{ bits}.
+%			\]
+%		\end{itemize}
+%	\end{frame}
 	
-	\begin{frame}{Embedding Watermark Bits into Text}
-		\begin{itemize}
-			\item Partition the vocabulary into two subsets:
-			\[
-			V=V_0\cup V_1,\qquad V_0\cap V_1=\varnothing
-			\]
-			
-			\item Tokens in $V_0$ represent bit $0$, while tokens
-			in $V_1$ represent bit $1$.
-			
-			\item Modify token-selection logits to favor tokens
-			corresponding to the desired watermark bit.
-			
-			\item The embedding procedure encodes both $x_i$ and
-			$y_i=f(x_i)$ into successive token blocks.
-			
-			\item The text remains naturally generated, while
-			token choices carry the watermark information.
-		\end{itemize}
-	\end{frame}
+%	\begin{frame}{Embedding Watermark Bits into Text}
+%		\begin{itemize}
+%			\item Partition the vocabulary into two subsets:
+%			\[
+%			V=V_0\cup V_1,\qquad V_0\cap V_1=\varnothing
+%			\]			
+%			\item Tokens in $V_0$ represent bit $0$, while tokens in $V_1$ represent bit $1$.
+%			\item Modify token-selection logits to favor tokens corresponding to the desired watermark bit.			
+%			\item The embedding procedure encodes both $x_i$ and $y_i=f(x_i)$ into successive token blocks.
+%			\item The text remains naturally generated, while token choices carry the watermark information.
+%		\end{itemize}
+%	\end{frame}
 	
 	\begin{frame}%{Watermark Embedding (Algorithm 1)}
 		\centering
@@ -211,22 +158,10 @@
 	
 	\begin{frame}{Simplified Watermark Extraction}
 		\begin{itemize}
-			\item \textbf{Standard extraction}
-			\begin{itemize}
-				\item Use the secret-keyed LFSR to identify valid
-				$x_i$ coordinates.
-				\item Extract the corresponding $f(x_i)$ values.
-				\item Apply MCP to the recovered points.
-			\end{itemize}
-			
-			\item \textbf{Simplified extraction}
-			\begin{itemize}
-				\item Slide a $2n$-bit window across the extracted
-				watermark bit sequence.
-				\item Interpret each window as a candidate point.
-				\item Apply MCP directly to all candidate points.
-			\end{itemize}
-			
+			\item Slide a $2n$-bit window across the extracted
+			watermark bit sequence.
+			\item Interpret each window as a candidate point.
+			\item Apply MCP directly to all candidate points.
 			\item This avoids filtering candidates using valid
 			LFSR-generated coordinates but introduces more
 			spurious points.
@@ -263,7 +198,6 @@
 	\end{frame}
 	
 	\section{Security Analysis}
-	
 	\begin{frame}{Security Analysis: Watermark Recovery}
 		\begin{itemize}
 			\item Let $N=F+R$, where:
@@ -271,18 +205,10 @@
 				\item $F$: genuine points lying on the secret line.
 				\item $R$: random or corrupted points.
 			\end{itemize}
-			
-			\item The analysis models corrupted points as randomly
-			distributed over $GF(2^n)\times GF(2^n)$.
-			
-			\item Recovery is reliable when the genuine line contains
-			more points than any competing line formed by corrupted
-			points.
-			
-			\item Larger finite fields reduce the probability of
-			accidental collinearities under this model.
+			\item The analysis models corrupted points as randomly distributed over $GF(2^n)\times GF(2^n)$.
+			\item Recovery is reliable when the genuine line contains more points than any competing line formed by corrupted points.
+			\item Larger finite fields reduce the probability of accidental collinearities under this model.
 		\end{itemize}
-		
 		\vspace{0.15cm}
 		\[
 		f(x)=a_0+a_1x,\qquad K=(a_0\parallel a_1)
@@ -292,50 +218,41 @@
 	\begin{frame}{Algebraic Attack and Countermeasures}
 		\begin{itemize}
 			\item \textbf{Vulnerability:}
-			An LFSR and fixed token partitions can expose linear
-			relationships in the watermark construction.
-			
+			An LFSR and fixed token partitions can expose linear relationships in the watermark construction.
 			\item \textbf{Potential attack:}
-			An adversary may construct linear equations from
-			observed token occurrences to infer the LFSR seed
-			and watermark bits.
-			
+			An adversary may construct linear equations from observed token occurrences to infer the LFSR seed and watermark bits.
 			\item \textbf{Countermeasures}
 			\begin{itemize}
-				\item Replace the LFSR with a nonlinear feedback
-				shift register (NFSR).
-				\item Use dynamic token partitions rather than
-				fixed $V_0$ and $V_1$.
-				\item Derive partitions using cryptographic hashes
-				and the secret key.
+				\item Replace the LFSR with a nonlinear feedback shift register (NFSR).
+				\item Use dynamic token partitions rather than fixed $V_0$ and $V_1$.
+				\item Derive partitions using cryptographic hashes and the secret key.
 			\end{itemize}
-			
-			\item Stronger security may introduce additional
-			computational overhead.
+			\item Stronger security may introduce additional computational overhead.
 		\end{itemize}
 	\end{frame}
 	
-	\section{Evaluation}
+	\begin{frame}{Security Analysis: Probability Bound}
+		\textbf{Theorem:} \textit{Given a plane $GF(2^n)\times GF(2^n)$, and $R$ random points, the probability that there is a straight line that contains k points is approximated by}
+		\vspace{0.5cm}
+		\[
+		\binom{R}{k}
+		\left(\frac{1}{2^n}\right)^{k-2}
+		\left(1-\frac{1}{2^n}\right)^{R-k}.
+		\]
+	\end{frame}
 	
+	\section{Evaluation}
 	\begin{frame}{Experimental Setup}
 		\begin{itemize}
-			\item \textbf{Objective:} Evaluate the maximum number
-			of accidental collinear points in random point sets.
-			
-			\item \textbf{Method:} Generate random points over
-			finite fields of different sizes.
-			
+			\item \textbf{Objective:} Evaluate the maximum number of accidental collinear points in random point sets.
+			\item \textbf{Method:} Generate random points over finite fields of different sizes.
 			\item \textbf{Fields:}
 			\[
 			GF(2^6),\ GF(2^8),\ GF(2^{12}),\
 			GF(2^{16}),\ GF(2^{32})
 			\]
-			
 			\item \textbf{Evaluation:} Measure the maximum number
 			of collinear points for varying numbers of random points.
-			
-			\item \textbf{Goal:} Study how field size affects the
-			likelihood of accidental watermark-like structures.
 		\end{itemize}
 	\end{frame}
 	
